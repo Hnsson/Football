@@ -1,18 +1,5 @@
 const axios = require('axios')
 
-// '49,144,63,62,39,2,61,140,135'
-
-leagues = {
-    'league-two': 42,
-    'league-one': 41,
-    'championship': 40,
-    'premier-league': 39,
-    'championsleague': 2,
-    'ligue-1': 61,
-    'la-liga': 140,
-    'serie-a': 135
-};
-
 async function fetch_all_leagues() {
     const leagueIds = [42,41,40,39,2,61,140,135];
 
@@ -20,7 +7,7 @@ async function fetch_all_leagues() {
         method: 'GET',
         url: `https://v3.football.api-sports.io/leagues`,
         headers: {
-            'x-rapidapi-key': 'f67826415ac5a92eda95726d55e68e5d',
+            'x-rapidapi-key': '{{API-KEY}}',
             'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
         }
     }
@@ -39,7 +26,7 @@ async function fetch_all_season_from_league(league_id) {
         method: 'GET',
         url: 'https://v3.football.api-sports.io/leagues',
         headers: {
-          'x-rapidapi-key': 'f67826415ac5a92eda95726d55e68e5d',
+          'x-rapidapi-key': '{{API-KEY}}',
           'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
         },
         params: {
@@ -61,7 +48,7 @@ async function fetch_season_from_league(league_id, season) {
         method: 'GET',
         url: 'https://v3.football.api-sports.io/fixtures',
         headers: {
-            'x-rapidapi-key': 'f67826415ac5a92eda95726d55e68e5d',
+            'x-rapidapi-key': '{{API-KEY}}',
             'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
         },
         params: {
@@ -83,7 +70,7 @@ async function fetch_table_from_league(league_id, season) {
         method: 'GET',
         url: 'https://v3.football.api-sports.io/standings',
         headers: {
-            'x-rapidapi-key': 'f67826415ac5a92eda95726d55e68e5d',
+            'x-rapidapi-key': '{{API-KEY}}',
             'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
         },
         params: {
@@ -105,7 +92,7 @@ async function fetch_season_from_team(league_id, season, team) {
         method: 'GET',
         url: 'https://v3.football.api-sports.io/fixtures',
         headers: {
-            'x-rapidapi-key': 'f67826415ac5a92eda95726d55e68e5d',
+            'x-rapidapi-key': '{{API-KEY}}',
             'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
         },
         params: {
